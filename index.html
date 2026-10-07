@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soluciones Bravos — Software & Herramientas de Productividad</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+    header { padding: 4rem 1.5rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+    header h1 { font-size: 2.75rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 0.75rem; }
+    header h1 span { color: var(--accent); }
+    header p { color: var(--text-muted); font-size: 1.15rem; line-height: 1.6; }
+    
+    .container { max-width: 1050px; margin: 0 auto; padding: 2rem 1.5rem 5rem; flex: 1; width: 100%; }
+    .section-title { font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; margin-bottom: 4rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
+    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .card-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    .card-title { font-size: 1.35rem; font-weight: 700; }
+    .card-badge { font-size: 0.75rem; background: #0369a1; color: #e0f2fe; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-left: auto; }
+    .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem; flex: 1; }
+    .card-actions { display: flex; gap: 0.75rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.7rem 1.2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.2s; }
+    .btn-primary { background: var(--accent); color: #0f172a; flex: 1; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.05); }
+
+    /* Contact box */
+    .contact-card { background: rgba(30, 41, 59, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center; }
+    .contact-info h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .contact-info p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+    .contact-channels { display: flex; flex-direction: column; gap: 0.75rem; }
+    .channel-item { display: flex; align-items: center; gap: 0.75rem; color: var(--text); text-decoration: none; font-size: 0.95rem; padding: 0.75rem 1rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; transition: border-color 0.2s; }
+    .channel-item:hover { border-color: var(--accent); }
+
+    footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Soluciones <span>Bravos</span></h1>
+    <p>Desarrollo de software nativo para Windows enfocado en optimizar el tiempo, la velocidad operativa y la productividad diaria.</p>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">Catálogo de Software</h2>
+    
+    <div class="grid">
+      <!-- Tarjeta RapidText -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">RapidText</div>
+          <span class="card-badge">v1.0.1</span>
+        </div>
+        <p>Asistente flotante para inyección y pegado ultrarrápido de textos y respuestas frecuentes con Ctrl+Q. Organizado por grupos personalizables.</p>
+        <div class="card-actions">
+          <a href="https://solucionesbravos.github.io/rapidtext/" class="btn btn-secondary">Detalles</a>
+          <a href="https://github.com/solucionesbravos/rapidtext/releases/latest/download/RapidText.zip" class="btn btn-primary">Descargar</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta Próximas Apps -->
+      <div class="card" style="opacity: 0.65; border-style: dashed;">
+        <div class="card-header">
+          <div class="card-icon">📦</div>
+          <div class="card-title">Nueva Solución</div>
+          <span class="card-badge" style="background: #475569;">Próximamente</span>
+        </div>
+        <p>Pronto incorporaremos más herramientas diseñadas para simplificar flujos de trabajo repetitivos y gestión comercial.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Atención y Licencias Comerciales</h2>
+    <div class="contact-card">
+      <div class="contact-info">
+        <h3>Adquisición de Licencias Pro</h3>
+        <p>Atendemos solicitudes tanto en Perú (vía transferencias locales o billeteras digitales) como a nivel internacional (Europa, América y otros continentes). Escríbenos directamente para coordinar la activación de tu equipo.</p>
+      </div>
+      <div class="contact-channels">
+        <a href="mailto:solucionesbravos@gmail.com?subject=Consulta%20de%20Licencia%20RapidText" class="channel-item">
+          ✉️ <strong>solucionesbravos@gmail.com</strong>
+        </a>
+        <a href="https://wa.me/51933489086?text=Hola,%20quisiera%20adquirir%20la%20licencia%20Pro%20de%20RapidText" target="_blank" class="channel-item">
+          💬 <strong>WhatsApp Comercial Directo</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Soluciones Bravos. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
