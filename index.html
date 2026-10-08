@@ -13,8 +13,10 @@
       --text: #f8fafc;
       --text-muted: #94a3b8;
       --border: #334155;
+      --warning: #f59e0b;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
     header { padding: 4rem 1.5rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
     header h1 { font-size: 2.75rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 0.75rem; }
@@ -32,12 +34,28 @@
     .card-title { font-size: 1.35rem; font-weight: 700; }
     .card-badge { font-size: 0.75rem; background: #0369a1; color: #e0f2fe; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-left: auto; }
     .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem; flex: 1; }
-    .card-actions { display: flex; gap: 0.75rem; }
+    .card-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.7rem 1.2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.2s; }
     .btn-primary { background: var(--accent); color: #0f172a; flex: 1; }
     .btn-primary:hover { background: var(--accent-hover); }
     .btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
     .btn-secondary:hover { background: rgba(255, 255, 255, 0.05); }
+
+    /* Manual de Instalación */
+    .manual-wrapper { margin-bottom: 4rem; }
+    .manual-steps { display: flex; flex-direction: column; gap: 1.25rem; }
+    .manual-step-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+    .step-number { width: 36px; height: 36px; min-width: 36px; border-radius: 50%; background: var(--accent); color: #0f172a; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .step-body h4 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--text); }
+    .step-body p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem; }
+    .step-body ul { margin-left: 1.2rem; color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+    .step-body li { margin-bottom: 0.4rem; }
+    
+    .smartscreen-alert { background: rgba(245, 158, 11, 0.1); border-left: 3px solid var(--warning); padding: 0.9rem 1.2rem; border-radius: 6px; margin-top: 0.6rem; }
+    .smartscreen-alert p { color: #fde68a; margin: 0; font-size: 0.92rem; }
+    .smartscreen-alert strong { color: var(--warning); }
+    
+    .shortcut-tag { background: #0f172a; border: 1px solid var(--border); padding: 0.15rem 0.5rem; border-radius: 4px; font-family: monospace; color: var(--accent); font-size: 0.85rem; }
 
     /* Contact box */
     .contact-card { background: rgba(30, 41, 59, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center; }
@@ -71,6 +89,7 @@
         <p>Asistente flotante para inyección y pegado ultrarrápido de textos y respuestas frecuentes con Ctrl+Q. Organizado por grupos personalizables.</p>
         <div class="card-actions">
           <a href="https://solucionesbravos.github.io/rapidtext/" class="btn btn-secondary">Detalles</a>
+          <a href="#manual-instalacion" class="btn btn-secondary">📖 Manual</a>
           <a href="https://github.com/solucionesbravos/rapidtext/releases/latest/download/RapidText.exe" class="btn btn-primary">Descargar</a>
         </div>
       </div>
@@ -83,6 +102,76 @@
           <span class="card-badge" style="background: #475569;">Próximamente</span>
         </div>
         <p>Pronto incorporaremos más herramientas diseñadas para simplificar flujos de trabajo repetitivos y gestión comercial.</p>
+      </div>
+    </div>
+
+    <!-- SECCIÓN: MANUAL DE INSTALACIÓN Y GUÍA RÁPIDA -->
+    <div id="manual-instalacion" class="manual-wrapper">
+      <h2 class="section-title">Manual de Instalación y Primeros Pasos — RapidText</h2>
+      
+      <div class="manual-steps">
+        
+        <!-- Paso 1 -->
+        <div class="manual-step-card">
+          <div class="step-number">1</div>
+          <div class="step-body">
+            <h4>Descarga y Ejecución</h4>
+            <p>Haz clic en el botón <strong>Descargar</strong> en la tarjeta de RapidText. Una vez descargado el archivo <code>RapidText.exe</code>, haz clic sobre él para abrir la aplicación.</p>
+          </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="manual-step-card">
+          <div class="step-number">2</div>
+          <div class="step-body">
+            <h4>Aviso de Windows Defender (SmartScreen)</h4>
+            <p>Al ser la primera vez que se ejecuta en tu equipo, Windows mostrará la ventana azul/marrón <em>"Windows protegió su PC"</em>:</p>
+            <div class="smartscreen-alert">
+              <p>• Haz clic en el texto subrayado <strong>"Más información"</strong>.<br>
+              • Luego presiona el botón <strong>"Ejecutar de todas formas"</strong> que se habilitará abajo. <em>(Solo solicitará este permiso la primera vez).</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="manual-step-card">
+          <div class="step-number">3</div>
+          <div class="step-body">
+            <h4>Activación de Licencia o Modo Gratuito</h4>
+            <p>Al abrir el programa por primera vez se mostrará la ventana de activación:</p>
+            <ul>
+              <li><strong>Modo PRO:</strong> Ingresa la clave que te enviamos por WhatsApp o correo y pulsa <em>"ACTIVAR SUSCRIPCIÓN PRO"</em>.</li>
+              <li><strong>Modo Gratuito:</strong> Haz clic en <em>"Continuar con Versión Gratuita (Límite 8 notas)"</em> para usar la app sin límite de tiempo y con funcionalidad esencial completa.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="manual-step-card">
+          <div class="step-number">4</div>
+          <div class="step-body">
+            <h4>Uso del Asistente Flotante y Atajos</h4>
+            <p>RapidText se situará siempre visible en la esquina superior derecha como un cuaderno compacto:</p>
+            <ul>
+              <li><strong>Desplegar u Ocultar:</strong> Haz doble clic sobre el cuaderno o usa el atajo <span class="shortcut-tag">Alt + Q</span>.</li>
+              <li><strong>Pegado ultrarrápido:</strong> Con <span class="shortcut-tag">Ctrl + Q</span> + número disparas directamente el texto en cualquier programa activo.</li>
+              <li><strong>Crear notas:</strong> Usa el botón <span class="shortcut-tag">+</span> abajo a la derecha. Puedes guardar párrafos largos, emojis y formatos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Paso 5 -->
+        <div class="manual-step-card">
+          <div class="step-number">5</div>
+          <div class="step-body">
+            <h4>Grupos y Configuración de Inicio</h4>
+            <ul>
+              <li><strong>Grupos de colores:</strong> Usa los cuadros superiores para clasificar notas por áreas (ventas, soporte, cuentas bancarias).</li>
+              <li><strong>Engranaje (⚙️):</strong> En los ajustes, activa la casilla <strong>"Iniciar automáticamente al encender Windows"</strong> para que esté disponible cada vez que prendas tu PC.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
 
